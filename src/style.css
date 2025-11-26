@@ -1,5 +1,54 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
+body {
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 0px;
+    position: relative;
+}
+
+.top-left {
+    position: absolute;
+    top: -30px;
+    left: 5px;
+    font-size: 100px;
+}
+
+.center {
+    font-size: 150px;
+    
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: -30px;
+    right: 5px;
+    font-size: 100px;
+    transform: rotate(180deg);
+}
+
+.heart {
+    color: red;
+}
+.diamond {
+    color: red;
+}
+.spade {
+    color: black;
+}
+.club {
+    color:black;
 }
