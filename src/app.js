@@ -5,37 +5,38 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function () {
-  // Declaro los arrays y el aleatorio de la carta
-  const suits = ["♠", "♥", "♦", "♣"];
-  const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-  let randomSuit = suits[Math.floor(Math.random() * suits.length)];
-  let randomValue = values[Math.floor(Math.random() * values.length)];
+const suits = ["♠", "♥", "♦", "♣"];
+const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const suitClasses = {
+  "♥": "heart",
+  "♦": "diamond",
+  "♠": "spade",
+  "♣": "club"
+};
+const pokerCard = document.getElementById("card");
 
-  let pokerCard = document.getElementById("card");
-  // Le doy nombre a los iconos
-  const suitClasses = {
-    "♥": "heart",
-    "♦": "diamond",
-    "♠": "spade",
-    "♣": "club"
-  };
-// cambio html
+
+
+function generateAndRenderRandomCard() {
+  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  const randomValue = values[Math.floor(Math.random() * values.length)];
+
   pokerCard.innerHTML = `
-
-    <div class="top-left ${suitClasses[randomSuit]}">
+  <div class="top-left ${suitClasses[randomSuit]}">
     ${randomSuit} 
   </div>
-  <div class="center">
+    <div class="center">
     ${randomValue}
   </div>
   <div class="bottom-right ${suitClasses[randomSuit]}">
     ${randomSuit}  
   </div>
 `;
-
-
 }
+
+window.onload = function () {generateAndRenderRandomCard()}
+document.getElementById("randomCard").addEventListener("click",generateAndRenderRandomCard)
+
 
 
 
